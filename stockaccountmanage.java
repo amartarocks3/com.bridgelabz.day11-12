@@ -1,6 +1,8 @@
 package day11;
 
-	public class stockaccountmanage {
+import java.util.Scanner;
+
+public class stockaccountmanage {
 
 	String stock_name;
 	int NumberOfShares;
@@ -42,12 +44,32 @@ package day11;
 
 	public static void main(String[] args) {
 	// TODO Auto-generated method stub
-	stockaccountmanage sc = new stockaccountmanage("microsoft",5,255);
-	stockaccountmanage sc1 = new stockaccountmanage("google",11,25);
-	System.out.println(sc.print());
-	System.out.println(sc1.print());
-	System.out.println("Total "+sc.per()+sc1.per());
+	System.out.println("Enter the number of company to enter the records ");
+	Scanner sc = new Scanner(System.in);
+	Scanner sc1 = new Scanner(System.in);
+	Scanner sc2 = new Scanner(System.in);
+	Scanner sc3 = new Scanner(System.in);
+	int n = sc.nextInt();
+	String[] company_name = new String[n];
+	int[] company_shares = new int[n];
+	int[] company_share_price = new int[n];
+	for(int i=0;i<n;i++) {
+	System.out.println("Enter company name ");
+	company_name[i]=sc1.nextLine();
+	System.out.println("Enter number of shares");
+	company_shares[i]=sc2.nextInt();
+	System.out.println("Enter price of shares");
+	company_share_price[i]=sc3.nextInt();
+	
+	}float per,total=0;
+	for(int j=0;j<n;j++) {
+		stockaccountmanage st = new stockaccountmanage(company_name[j],company_shares[j],company_share_price[j]);
+		System.out.println(st.print());
+		per = st.per;
+		total=total+st.per;
+		
 	}
-}
+	System.out.println("Total "+total);
+}}
 
 
