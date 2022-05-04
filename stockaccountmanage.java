@@ -32,7 +32,7 @@ public class stockaccountmanage {
 
 	public String print() {
 
-	return ("The value for "+ this.name() + " is "+this.per());
+	return (this.name() + "				"+this.num()+"    		"+this.Price()+"    		"+this.per());
 	}
 
 	public float total() {
@@ -62,6 +62,7 @@ public class stockaccountmanage {
 	company_share_price[i]=sc3.nextInt();
 	
 	}float per,total=0;
+	System.out.println("Company name      Number of shares      Price of shares    Total cost of each shares");
 	for(int j=0;j<n;j++) {
 		stockaccountmanage st = new stockaccountmanage(company_name[j],company_shares[j],company_share_price[j]);
 		System.out.println(st.print());
